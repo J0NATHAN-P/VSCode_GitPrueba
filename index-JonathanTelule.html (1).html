@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Ejercicio D9</title>
+    </head>
+    <body style="margin: 50px;">
+        <div style="margin-right: 5%; padding: 25px; width: 40%; border: 5px; border-color: grey; border-style: inset; float: left;">
+        <h1>Ejercicio del día 9</h1>
+        <p>Elaborar por: Jonathan David Telule Pinti</p>
+        
+        <p>Indicaciones: La ESFE desea desarrollar un BOT automatizado de atención al cliente, para gestionar las consultas más frecuentes que se realizan en las redes sociales</p>
+        <b><p>El BOT debe de mostrar los siguientes elementos:</p></b>
+        
+        <ul>
+            <li>Un Saludo</li>
+            <li>Espacio para digitar el nombre por medio de un INPUT, este debe de llevar un ID</li>
+            <li>Espacio para digitar el año de nacimiento por medio de un INPUT, este debe de llevar un ID </li>
+            <li>Un Botón para enviar los datos, este debe de contener el evento 'onclick'</li>
+            <li>Establecer una etiqueta DIV con el ID="divRespuesta" para mostrar el mensaje procesado del BOT</li>
+        </ul>
+       
+        <b><p>Las acciones del BOT deben ser las siguientes mediante una función de JavaScript:</p></b>
+        
+        <ul>
+            <li>Obtener los datos de los campos INPUT</li>
+            <li>Calcular la edad (Restar el año actual 2022 menos el año de nacimiento)</li>
+            <li>Personalizar un mensaje con el nombre y edad de la persona</li>
+            <li>Mostrar la opciones que los usuarios tienen disponible, las cuales son: </li>
+            <ul>
+                <li>Información sobre las carreras</li>
+                <li>Costos de Inscripción y matricula</li>
+                <li>Fechas de los cursos propedéuticos</li>
+                <li>Información de la rifa Agape</li>
+            </ul>
+            
+        </ul>
+        </div>
+
+        <div style="width: 40%; float: left;">
+            
+        <h1>Solución</h1>
+        <p>Bienvenido al servicio automático de ESFE, por favor proporcione los siguientes datos:</p>
+        <label for="nombre1">Digite su nombre</label>
+        <input type="text" id="nombre1" ><br /></br>
+        <label for="numeral">Digite su año de nacimiento:</label>
+        <input type="number"   id="numeral" min="1950" max="2023" ><br /></br>
+        <button type="button" onclick="captura()" >tocame</button><br /></br>
+
+            
+
+        </div>
+        <div style="margin-right: 5%; padding: 25px; overflow-y: scroll; height: 350px ; width: 30%; border: 4px; border-color: grey; border-style: inset; float: left;">
+        <div id="divRespuesta" ></div>
+        </div>
+           
+        <!-- Espacio para escribir el código JavaScript -->
+        <script>
+
+                function sukuna(){
+
+                    var date=document.getElementById("buscar").value;
+                    var itadori="Proceso de ingreso:"+"<br>Curso propedéutico: $30.00."+
+                    "<br>Incluye: inscripción, prueba psicológica, curso propedéutico, asesoría  y entrevista."+
+                    "<br><br>Después de aprobado el curso propedéutico, los aranceles para inscripción en la carrera  son los siguientes:"+
+                    "<br><br>-Matrícula e Inscripción de módulos por ciclo (periodo ordinario)$8.00."+
+                    "<br>-Matricula: $30.00 (1 vez cada inicio de ciclo)."+
+                    "<br>-Mensualidad: $50.00 (10 cuotas- Febrero a Noviembre)."+
+                    "<br>-Mensualidad Enero y Diciembre:  $25.00 cada mes."+
+                    "<br>-Talonario: $4.00 (1 vez cada ciclo)."+
+                    "<br>-Carnet de estudiante: $5.00 (1 vez al año o cada reposición)."+
+                    "<br>-Libro de inglés: $28.00 (1 vez al inicio de cada año, sujeto a precio de mercado).";
+                    var nobara="Fechas de los cursos Propedéuticos 2023:"+
+                    "<br><br>-Primer curso propedéutico: Del 16 al 27 de Octubre."+
+                    "<br><br>-Segundo curso propedéutico: Del 20 de Noviembre al 01 de Diciembre."+
+                    "<br><br>-Tercer curso propedéutico: Del 04 al 15 de Diciembre.";
+
+                    var megumi="<h4>Informacion de rifa agape 2023</h4>"+
+                    "Premios:"+
+                    "<br><br>1°-Hyundai Atos Año 2024."+
+                    "<br>2°-Motocicleta Yamaha."+
+                    "<br>3°-Estadia familiar en Hotel AGAPE todo incluido para 4 personas."+
+                    "<br>4°-Una laptop."+
+                    "<br>5°-Certificado de $350 en tienda virtual AGAPE."+
+                    "<br>6°-Un smartphone."+
+                    "<br>7°-Bicicleta montañesa para hombre."+
+                    "<br>8°-Bicicleta montañesa para mujer."+
+                    "<br><br>Valor del voleto: $2.50."+
+                    "<br><br>Fecha: Sabado 02 de diciembre de 2023.";
+
+
+                    if (date=="1"){
+                    document.getElementById("btnin").innerHTML = "<a href='https://sites.google.com/esfe.agape.edu.sv/ingreso/inicio'>Enlace de información</a>" ;
+                }else{
+                    if (date=="2"){
+                    document.getElementById("btnin").innerHTML = itadori;
+
+                }else{
+                    if (date=="3"){
+                    document.getElementById("btnin").innerHTML = nobara ;
+                }else{
+                    if (date=="4"){
+                    document.getElementById("btnin").innerHTML = megumi;
+                }
+                }
+                    
+                }
+                }
+                }
+
+
+
+          function captura(){
+            
+            var nombr=document.getElementById("nombre1").value;
+            var num=document.getElementById("numeral").value;
+            var editar=2023-num;
+            var ragna="Hola " + nombr + " de " + editar + " años de edad.";
+
+           
+            ragna+= "<br><br>Para saber mas informacion elige una de las siguientes opciones: " +
+            "<br>1- Información sobre las carreras." +
+            "<br>2- Costos de Inscripción y matrícula." +
+            "<br>3- Fechas de los cursos propedéuticos." +
+            "<br>4- Información de la rifa Agape." +
+            "<br><br>" + "<input type='number' min='1' max='4'  id='buscar'>" +  '<button type="button" onclick="sukuna()" >solicitar</button>'+
+            '<br><br><div id="btnin"></div>';
+
+            document.getElementById("divRespuesta").innerHTML =ragna ;
+            
+           
+            if (nombr==""){
+                alert("Tienes que poner un nombre");
+                document.getElementById("nombre1").focus();
+            }else{
+                if (num==""){
+                alert("Tienes que poner el año de nacimiento");
+                document.getElementById("numeral").focus();
+                }else{
+                    
+                    document.getElementById("nombre1").value="";
+                    document.getElementById("numeral").value="";
+                    document.getElementById("nombre1").focus();
+                }
+            }
+
+            
+          }
+         
+          
+        </script>
+    
+        
+    </body>
+</html>
